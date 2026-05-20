@@ -163,10 +163,15 @@ export function registerDoctorCommand(program: Command): void {
     .description(
       'Diagnose CLI detection + PATH issues — what the daemon sees vs what your shell sees',
     )
-    .action(async () => {
+    .option('--json', 'output report as JSON for scripting')
+    .action(async (options) => {
       try {
         const report = await gatherReport();
-        printReport(report);
+        if (options.json) {
+          console.log(JSON.stringify(report, null, 2));
+        } else {
+          printReport(report);
+        }
       } catch (err) {
         console.error(
           'doctor failed:',
