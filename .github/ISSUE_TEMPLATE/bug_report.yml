@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a bug in Chorus
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug description
+      placeholder: Describe the bug clearly and concisely
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        OS: 
+        Node version: 
+        Chorus version: 
